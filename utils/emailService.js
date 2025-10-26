@@ -1,6 +1,6 @@
-import { createTransport } from 'nodemailer';
+const { createTransport } = require('nodemailer');
 
-// 创建邮件传输器 - 修正方法名
+// 创建邮件传输器
 const transporter = createTransport({
   host: 'smtp.qq.com',
   port: 587,
@@ -45,4 +45,5 @@ const sendVerificationCode = async (email, code) => {
   }
 };
 
-export default { sendVerificationCode };
+// 修改导出方式
+module.exports = { sendVerificationCode };
